@@ -1,14 +1,108 @@
-🚗 Unidrive – Smart Campus Carpooling App
-📌 Overview
+<div align="center">
 
-Unidrive is a full-stack campus carpooling mobile application built using React Native (Expo) and Node.js/Express with MongoDB.
+# 🚗 Unidrive — Smart Campus Carpooling App
 
-The application allows students to safely share rides inside and around campus with real-time communication, smart filtering, location detection, and driver rating system.
+[![Phase](https://img.shields.io/badge/Version-MVP%20V1-blue?style=flat-square)]()
+[![React Native](https://img.shields.io/badge/React%20Native-Expo-000000?style=flat-square&logo=expo)](https://expo.dev)
+[![Node.js](https://img.shields.io/badge/Backend-Node.js-339933?style=flat-square&logo=node.js&logoColor=white)](https://nodejs.org)
+[![MongoDB](https://img.shields.io/badge/Database-MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)](https://mongodb.com)
+[![License](https://img.shields.io/badge/License-Academic-blue?style=flat-square)]()
 
-This project demonstrates complete full-stack mobile development including authentication, messaging, map integration, and advanced ride filtering.
+*A full-stack campus carpooling mobile application for safe ride sharing, smart matching, and real-time communication between students.*
 
-                                                   ✨ Main Features
-🔐 Authentication System
+[Overview](#-overview) • [Architecture](#-architecture) • [Quick Start](#-quick-start) • [Features](#-core-features) • [Roadmap](#-roadmap)
+
+</div>
+
+---
+
+## 📋 Table of Contents
+
+- [Overview](#-overview)
+- [Architecture](#-architecture)
+- [Technology Stack](#-technology-stack)
+- [Core Features](#-core-features)
+- [Quick Start](#-quick-start)
+- [Project Structure](#-project-structure)
+- [Configuration](#-configuration)
+- [Security Notice](#-security-notice)
+- [Roadmap](#-roadmap)
+- [What This Project Demonstrates](#-what-this-project-demonstrates)
+- [Author](#-author)
+
+---
+
+## 🎯 Overview
+
+**Unidrive** is a **full-stack campus carpooling mobile app** built with **React Native (Expo)** for the frontend and **Node.js / Express + MongoDB** for the backend.
+
+It enables students to:
+
+- safely share rides inside and around campus
+- communicate directly in real time
+- filter rides using smart preferences
+- detect nearby rides using location-based logic
+- rate drivers after ride completion
+
+### Problem Statement
+
+Campus transportation often suffers from:
+
+- ❌ Unorganized ride coordination
+- ❌ No trusted student-only ride sharing flow
+- ❌ Poor ride visibility and filtering
+- ❌ No integrated communication between driver/passenger
+- ❌ No post-ride rating system for trust
+
+### Unidrive Solution
+
+✔ Student-friendly ride publishing & joining  
+✔ Real-time private messaging  
+✔ Smart search and filtering  
+✔ Live location & map-based ride discovery  
+✔ Driver rating and profile stats  
+✔ Secure authentication + password reset flow  
+
+---
+
+## 🏗️ Architecture
+
+### System Overview
+
+```mermaid
+graph TB
+    A[Authentication System]
+    B[User Profile Module]
+    C[Ride Publishing & Join System]
+    D[Location & Map Engine]
+    E[Ride Search & Filters]
+    F[Real-Time Messaging]
+    G[Ride History]
+    H[Rating System]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    C --> F
+    C --> G
+    G --> H
+    F --> H
+Ride Flow (Simplified)
+🛠️ Technology Stack
+Layer	Technology	Purpose
+Mobile Frontend	React Native (Expo Router)	Mobile UI, navigation, routing
+Language	TypeScript	Strong typing & maintainability
+Networking	Axios	API communication
+Local Storage	AsyncStorage	Persist user/session data
+Maps	React Native Maps	Location & map integration
+Backend	Node.js + Express.js	REST API & business logic
+Database	MongoDB + Mongoose	Data storage & schema modeling
+Auth	JWT + Bcrypt	Secure login/session
+Email	Nodemailer	Password reset emails
+Security Utils	Crypto	Token generation for reset flow
+🧩 Core Features
+1️⃣ Authentication System
 
 User registration
 
@@ -16,35 +110,24 @@ Secure login with JWT
 
 Profile update
 
-Password reset via email (token-based system)
+Password reset via email (token-based)
 
-🔁 Password Reset
+Protected user flow
 
-The application includes a password reset system using Nodemailer.
+2️⃣ Password Reset System
 
-⚠ Important:
+The app includes a password reset workflow using Nodemailer and token-based verification.
 
-To activate password reset, you must configure:
+Reset Flow
+Request Reset → Generate Token → Send Email → Verify Token → Set New Password
 
-Your own Gmail address
+⚠️ To activate it, you must configure your own email credentials in .env.
 
-Your own Gmail App Password
-
-You need to place your credentials inside environment variables (.env) for security.
-
-Example:
-
-EMAIL_USER=your_email@gmail.com
-EMAIL_PASS=your_app_password
-
-
-⚠ For security reasons, the original credentials were removed from this repository.
-
-👤 Profile Features
+3️⃣ Profile Features
 
 Upload profile picture 📷
 
-Everyone sees your real photo in:
+Real profile photo displayed in:
 
 Messages
 
@@ -54,19 +137,25 @@ Driver info
 
 Update vehicle information
 
-Update preferences (No Smoking, Pets Allowed, etc.)
+Update ride preferences:
 
-View:
+No Smoking
+
+Pets Allowed
+
+etc.
+
+View profile stats:
 
 ⭐ Overall rating
 
 🚗 Total rides
 
-📍 Smart Location System
+4️⃣ Smart Location & Map System
 
-Automatically detects your current location
+Automatic current location detection
 
-Pick your:
+Select:
 
 Pickup point
 
@@ -74,17 +163,17 @@ Destination
 
 Interactive map integration
 
-Search rides:
+Nearby ride search (within 100 meters)
 
-Nearby rides (less than 100 meters)
+Search by:
 
-By destination
+destination
 
-By departure point
+departure point
 
-🚗 Ride System
+5️⃣ Ride System
 
-You can:
+Users can:
 
 Publish a ride
 
@@ -94,23 +183,19 @@ Participate as passenger
 
 Act as driver
 
-📂 Ride History Includes:
+Ride History Includes
 
-Hosted rides (as driver)
+Hosted rides (driver)
 
-Participated rides (as passenger)
+Participated rides (passenger)
 
 Upcoming rides
 
 Completed rides
 
-🔎 Advanced Ride Search & Filtering
+6️⃣ Advanced Ride Search & Filtering
 
-Users can:
-
-View all available rides
-
-Filter rides by:
+Users can browse and filter rides by:
 
 Female Only
 
@@ -124,141 +209,138 @@ No Smoking
 
 Pets Allowed
 
-Search rides nearby (within 100 meters)
+Nearby rides (within 100m)
 
-💬 Real-Time Messaging
+7️⃣ Real-Time Messaging
 
 Private chat between driver and passenger
 
 Displays real user profile photo
 
-Shows "You:" indicator for sent messages
+"You:" indicator for sent messages
 
 Integrated call button 📞 to directly call:
 
-The driver
+driver
 
-The passenger
+passenger
 
-When clicking the call icon, it opens the phone app directly.
+When clicking the call icon, the app opens the phone dialer automatically.
 
-⭐ Rating System
+8️⃣ Rating System
 
 After ride completion:
 
-Passenger can rate driver
+Passenger can rate the driver
 
 Ratings automatically update:
 
-Driver's overall rating
+Driver overall rating
 
 Profile statistics
 
-🛠 Technologies Used
-📱 Frontend
-
-React Native (Expo Router)
-
-TypeScript
-
-Axios
-
-AsyncStorage
-
-React Navigation
-
-React Native Maps
-
-🌐 Backend
-
-Node.js
-
-Express.js
-
-MongoDB
-
-Mongoose
-
-JWT Authentication
-
-Bcrypt
-
-Nodemailer
-
-Crypto
-
-🏗 Project Structure
-/app        → React Native frontend
-/server     → Node.js backend
-
-🚀 How to Run the Project
-1️⃣ Backend
+🚀 Quick Start
+Prerequisites
+Node.js >= 18
+npm >= 9
+Expo CLI / npx expo
+MongoDB (local or Atlas)
+1️⃣ Backend Setup
 cd server
 npm install
 npm start
 
-
 Runs on:
 
 http://YOUR_LOCAL_IP:5000
-
-2️⃣ Frontend
+2️⃣ Frontend Setup
 npm install
 npx expo start
+⚙️ Configuration
+🔎 IMPORTANT — Change the IP Address
 
-⚠ IMPORTANT – Change the IP Address
+This project uses a local IP address for frontend-backend communication.
 
-This project uses a local IP address to connect frontend and backend.
+Before running on your own machine:
 
-Before running the app on your own computer:
-
-🔎 Find your IP address
-
-On Windows:
-
+1. Find your IP address (Windows)
 ipconfig
-
 
 Look for:
 
 IPv4 Address
 
-
 Example:
 
 192.168.1.45
+2. Replace the backend IP in the project
 
-🔧 Replace the IP in the project
-
-Search inside the project for:
+Search in the project for:
 
 192.168.1.13
-
 
 Replace it with your own IP:
 
 http://YOUR_IP:5000
 
-
 Example:
 
 http://192.168.1.45:5000
 
+⚠️ If you do not change the IP, the mobile app will not connect to the backend.
 
-If you do not change the IP, the application will not connect to the backend.
+3. Environment Variables (.env)
 
+Create a .env file in your backend (/server) and add:
+
+EMAIL_USER=your_email@gmail.com
+EMAIL_PASS=your_gmail_app_password
+JWT_SECRET=your_jwt_secret
+MONGODB_URI=your_mongodb_connection_string
+
+⚠️ For security reasons, original credentials were removed from this repository.
+
+📁 Project Structure
+unidrive/
+├── app/                    # React Native (Expo Router) frontend
+│   ├── (auth)/
+│   ├── rides/
+│   ├── messages/
+│   ├── profile/
+│   └── ...
+├── server/                 # Node.js / Express backend
+│   ├── controllers/
+│   ├── routes/
+│   ├── models/
+│   ├── middleware/
+│   ├── utils/
+│   └── server.js
+├── assets/
+├── package.json
+└── README.md
 🔐 Security Notice
 
 For security reasons:
 
-Email credentials were removed
+✅ Email credentials were removed
 
-App passwords were removed
+✅ App passwords were removed
 
-Sensitive data must be stored in .env
+✅ Sensitive values must be stored in .env
 
-Never push real passwords to GitHub
+❌ Never push real passwords or secrets to GitHub
 
+Recommended Best Practices
+
+Use .gitignore for .env
+
+Use strong JWT secrets
+
+Use Gmail App Password (not your normal Gmail password)
+
+Rotate credentials if accidentally exposed
+
+🗺️ Roadmap
 🎯 What This Project Demonstrates
 
 Full-stack mobile architecture
@@ -269,13 +351,28 @@ Token-based password reset
 
 Map & geolocation integration
 
-Real-time messaging
+Driver-passenger messaging system
 
 Rating system logic
 
-Advanced filtering algorithms
+Smart filtering algorithms
 
-Clean UI/UX mobile design
+Clean mobile UI/UX design
+
+👤 Author
+
+Linda Jerbi
+ Engineering Student
+Tunisia 🇹🇳
+2026
+
+<div align="center">
+
+⬆ Back to Top
+
+Built for safer student mobility on campus.
+
+</div> ```
 ## 🔐 Login
 ![Login](./assets/screenshots/login.png)
 
@@ -325,8 +422,3 @@ Clean UI/UX mobile design
 ![Choose](./assets/screenshots/choisir.png)
 
 
-👩‍💻 Developed By
-
-Linda Jerbi
-Full-Stack Mobile Developer
-React Native & Node.js
