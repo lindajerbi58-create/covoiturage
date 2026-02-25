@@ -18,17 +18,18 @@
 
 ## 📋 Table of Contents
 
-- [Overview](#-overview)
-- [Architecture](#-architecture)
-- [Technology Stack](#-technology-stack)
-- [Core Features](#-core-features)
-- [Quick Start](#-quick-start)
-- [Project Structure](#-project-structure)
-- [Configuration](#-configuration)
-- [Security Notice](#-security-notice)
-- [Roadmap](#-roadmap)
-- [What This Project Demonstrates](#-what-this-project-demonstrates)
-- [Author](#-author)
+- [🎯 Overview](#-overview)
+- [🏗️ Architecture](#-architecture)
+- [🛠️ Technology Stack](#️-technology-stack)
+- [🧩 Core Features](#-core-features)
+- [🚀 Quick Start](#-quick-start)
+- [⚙️ Configuration](#️-configuration)
+- [📁 Project Structure](#-project-structure)
+- [🔐 Security Notice](#-security-notice)
+- [🗺️ Roadmap](#️-roadmap)
+- [🎯 What This Project Demonstrates](#-what-this-project-demonstrates)
+- [📸 Screenshots](#-screenshots)
+- [👤 Author](#-author)
 
 ---
 
@@ -49,19 +50,19 @@ It enables students to:
 Campus transportation often suffers from:
 
 - ❌ Unorganized ride coordination
-- ❌ No trusted student-only ride sharing flow
+- ❌ No trusted student-only ride-sharing flow
 - ❌ Poor ride visibility and filtering
-- ❌ No integrated communication between driver/passenger
+- ❌ No integrated communication between driver and passenger
 - ❌ No post-ride rating system for trust
 
-### Unidrive Solution
+### ✅ Unidrive Solution
 
-✔ Student-friendly ride publishing & joining  
-✔ Real-time private messaging  
-✔ Smart search and filtering  
-✔ Live location & map-based ride discovery  
-✔ Driver rating and profile stats  
-✔ Secure authentication + password reset flow  
+- ✔ Student-friendly ride publishing & joining
+- ✔ Real-time private messaging
+- ✔ Smart search and filtering
+- ✔ Live location & map-based ride discovery
+- ✔ Driver rating and profile stats
+- ✔ Secure authentication + password reset flow
 
 ---
 
@@ -73,9 +74,9 @@ Campus transportation often suffers from:
 graph TB
     A[Authentication System]
     B[User Profile Module]
-    C[Ride Publishing & Join System]
-    D[Location & Map Engine]
-    E[Ride Search & Filters]
+    C[Ride Publishing and Join System]
+    D[Location and Map Engine]
+    E[Ride Search and Filters]
     F[Real-Time Messaging]
     G[Ride History]
     H[Rating System]
@@ -87,17 +88,16 @@ graph TB
     C --> F
     C --> G
     G --> H
-    F --> H
-Ride Flow (Simplified)
+```
 🛠️ Technology Stack
 Layer	Technology	Purpose
 Mobile Frontend	React Native (Expo Router)	Mobile UI, navigation, routing
-Language	TypeScript	Strong typing & maintainability
+Language	TypeScript	Strong typing and maintainability
 Networking	Axios	API communication
 Local Storage	AsyncStorage	Persist user/session data
-Maps	React Native Maps	Location & map integration
-Backend	Node.js + Express.js	REST API & business logic
-Database	MongoDB + Mongoose	Data storage & schema modeling
+Maps	React Native Maps	Location and map integration
+Backend	Node.js + Express.js	REST API and business logic
+Database	MongoDB + Mongoose	Data storage and schema modeling
 Auth	JWT + Bcrypt	Secure login/session
 Email	Nodemailer	Password reset emails
 Security Utils	Crypto	Token generation for reset flow
@@ -119,6 +119,7 @@ Protected user flow
 The app includes a password reset workflow using Nodemailer and token-based verification.
 
 Reset Flow
+
 Request Reset → Generate Token → Send Email → Verify Token → Set New Password
 
 ⚠️ To activate it, you must configure your own email credentials in .env.
@@ -179,9 +180,9 @@ Publish a ride
 
 Join a ride
 
-Participate as passenger
+Participate as a passenger
 
-Act as driver
+Act as a driver
 
 Ride History Includes
 
@@ -241,10 +242,15 @@ Profile statistics
 
 🚀 Quick Start
 Prerequisites
+
 Node.js >= 18
+
 npm >= 9
-Expo CLI / npx expo
+
+Expo CLI (or npx expo)
+
 MongoDB (local or Atlas)
+
 1️⃣ Backend Setup
 cd server
 npm install
@@ -300,6 +306,8 @@ MONGODB_URI=your_mongodb_connection_string
 
 ⚠️ For security reasons, original credentials were removed from this repository.
 
+
+ 
 📁 Project Structure
 unidrive/
 ├── app/                    # React Native (Expo Router) frontend
@@ -318,6 +326,11 @@ unidrive/
 ├── assets/
 ├── package.json
 └── README.md
+
+
+
+
+
 🔐 Security Notice
 
 For security reasons:
@@ -341,6 +354,21 @@ Use Gmail App Password (not your normal Gmail password)
 Rotate credentials if accidentally exposed
 
 🗺️ Roadmap
+
+ Ride request approval / booking confirmation flow
+
+ Push notifications
+
+ In-app live location sharing during rides
+
+ Admin moderation dashboard
+
+ Ride cancellation policies
+
+ Enhanced trust and verification features
+
+ Payment integration (future version)
+
 🎯 What This Project Demonstrates
 
 Full-stack mobile architecture
@@ -349,7 +377,7 @@ Secure authentication flow
 
 Token-based password reset
 
-Map & geolocation integration
+Map and geolocation integration
 
 Driver-passenger messaging system
 
@@ -358,67 +386,53 @@ Rating system logic
 Smart filtering algorithms
 
 Clean mobile UI/UX design
+## 📸 Screenshots
 
-👤 Author
-
-Linda Jerbi
- Engineering Student
-Tunisia 🇹🇳
-2026
-
-<div align="center">
-
-⬆ Back to Top
-
-Built for safer student mobility on campus.
-
-</div> ```
-## 🔐 Login
+### 🔐 Login
 ![Login](./assets/screenshots/login.png)
 
-## 📝 Register
+### 📝 Register
 ![Register](./assets/screenshots/Register.png)
 
-## 🏠 Home
+### 🏠 Home
 ![Home](./assets/screenshots/home.png)
 
-## 🚗 Publish Ride
+### 🚗 Publish Ride
 ![Publish](./assets/screenshots/publish.png)
 
-## 🔎 Search Ride
+### 🔎 Search Ride
 ![Search](./assets/screenshots/chercher.png)
 
-## 📍 Select Pickup
+### 📍 Select Pickup
 ![Pickup](./assets/screenshots/pickup.png)
 
-## 🎯 Select Destination
+### 🎯 Select Destination
 ![Destination](./assets/screenshots/destination.png)
 
-## 📍 Nearby Rides
+### 📍 Nearby Rides
 ![Nearby](./assets/screenshots/nearby.png)
 
-## 💬 Messages
+### 💬 Messages
 ![Messages](./assets/screenshots/Messagerie.png)
 
-## 📖 My Rides
+### 📖 My Rides
 ![MyRides](./assets/screenshots/myrides.png)
 
-## 👤 Profile
+### 👤 Profile
 ![Profile](./assets/screenshots/profile.png)
 
-## ✏️ Edit Profile
+### ✏️ Edit Profile
 ![Edit](./assets/screenshots/edit.png)
 
-## 🔐 Forgot Password
+### 🔐 Forgot Password
 ![Forgot](./assets/screenshots/forgot.png)
 
-## 📞 Support
+### 📞 Support
 ![Support](./assets/screenshots/support.png)
 
-## 🚗 Available Rides
+### 🚗 Available Rides
 ![Available](./assets/screenshots/available.png)
 
-## 📍 Choose Location
+### 📍 Choose Location
 ![Choose](./assets/screenshots/choisir.png)
-
 
